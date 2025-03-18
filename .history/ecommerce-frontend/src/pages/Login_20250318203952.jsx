@@ -15,17 +15,14 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-box">
-        <h2>Login to Your Account</h2>
-        <p className="login-subtext">Welcome back! Please enter your credentials to continue.</p>
-
+        <h2>Login</h2>
         <input
           type="email"
-          placeholder="Email Address"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="login-input"
         />
-
         <input
           type="password"
           placeholder="Password"
@@ -33,14 +30,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           className="login-input"
         />
-
         <button onClick={handleLogin} className="login-button">Login</button>
-
-        <p className="forgot-password">Forgot your password?</p>
-
-        <p className="signup-link">
-          Don't have an account? <a href="/signup">Sign Up</a>
-        </p>
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/ProtectedRoute";
-import OrderTracking from "./components/OrderTracking"; 
 
 const App = () => {
   return (

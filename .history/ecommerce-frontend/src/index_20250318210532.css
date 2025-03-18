@@ -7,27 +7,25 @@ body {
 }
 
 /* Navbar Styles */
+/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px;
-  background: #6198ff;
-  color: rgb(117, 88, 88);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 /* Logo */
 .logo a {
   font-size: 24px;
   font-weight: bold;
+  color: #ff6f61;
   text-decoration: none;
-  color: white;
-  transition: 0.3s;
-}
-
-.logo a:hover {
-  color: #ffe2e0;
 }
 
 /* Navigation Links */
@@ -37,40 +35,31 @@ body {
 }
 
 .nav-links a {
+  font-size: 16px;
+  color: #333;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: 0.3s;
-  position: relative;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-/* Cart Link */
-.cart-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  position: relative;
+  color: #ff6f61;
 }
 
 /* Cart Badge */
+.cart-link {
+  position: relative;
+}
+
 .cart-badge {
-  background: #ffffff;
-  color: #c0807a;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 8px;
-  border-radius: 50%;
   position: absolute;
   top: -5px;
   right: -10px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 7px;
 }
 
 /* Auth Section */
@@ -80,46 +69,36 @@ body {
   gap: 15px;
 }
 
-.user-name {
-  font-size: 16px;
-  font-weight: bold;
-}
-
 /* Buttons */
 .login-button,
 .logout-button {
-  background: white;
-  color: #804742;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 15px;
+  background-color: #ff6f61;
+  color: white;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
+  font-size: 14px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 .login-button:hover,
 .logout-button:hover {
-  background: #ffe2e0;
+  background-color: #e65b50;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    padding: 15px 20px;
-  }
-
-  .nav-links {
-    margin-top: 10px;
-  }
-
-  .auth-section {
-    margin-top: 10px;
-  }
+/* User Menu */
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.user-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
 
 
 /* Product Card Styles */

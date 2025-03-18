@@ -11,8 +11,7 @@ const Checkout = () => {
   const location = useLocation();
   const [user, setUser] = useState(null);
   const [totalAmount, setTotalAmount] = useState(0);
-  const [checkoutProduct, setCheckoutProduct] = useState(null);
-  const [orderDetails, setOrderDetails] = useState(null);
+  const [checkoutProduct, setCheckoutProduct] = useState(null); 
 
   useEffect(() => {
     if (!isAuthenticated()) {
@@ -24,13 +23,7 @@ const Checkout = () => {
 
     if (location.state?.product) {
       setCheckoutProduct(location.state.product);
-      setTotalAmount(location.state.product.price);
-      setOrderDetails({
-        items: [location.state.product],
-        totalAmount: location.state.product.price,
-        estimatedDelivery: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toDateString(),
-        orderStatus: "Processing",
-      });
+      setTotalAmount(location.state.product.price); 
     } else {
       const total = cart.reduce((sum, item) => sum + item.price * (item.quantity || 1), 0);
       setTotalAmount(total);
@@ -38,13 +31,6 @@ const Checkout = () => {
       if (cart.length === 0) {
         alert("Your cart is empty. Add items before proceeding.");
         navigate("/");
-      } else {
-        setOrderDetails({
-          items: cart,
-          totalAmount: total,
-          estimatedDelivery: new Date(Date.now() + 10 * 24 * 60 * 60 * 1000).toDateString(),
-          orderStatus: "Processing",
-        });
       }
     }
   }, [cart, location.state, navigate]);
@@ -57,12 +43,7 @@ const Checkout = () => {
 
     handlePayment(totalAmount, user, () => {
       alert("Payment Successful! Your order has been placed.");
-
-      // Store order details in local storage (can replace with API call)
-      localStorage.setItem("latestOrder", JSON.stringify(orderDetails));
-
-      // Redirect to order tracking page
-      navigate("/order-tracking");
+      navigate("/orders");
     });
   };
 

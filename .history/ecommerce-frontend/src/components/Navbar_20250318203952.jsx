@@ -6,7 +6,6 @@ import "../index.css";
 const Navbar = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  const cartItems = useSelector((state) => state.cart.cart.length);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -14,26 +13,15 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
-        <Link to="/">🛍️ ShopEase</Link>
-      </div>
-
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/cart" className="cart-link">
-          Cart
-          {cartItems > 0 && <span className="cart-badge">{cartItems}</span>}
-        </Link>
+        <Link to="/cart">Cart</Link>
       </div>
-
-      <div className="auth-section">
+      <div>
         {user ? (
-          <div className="user-menu">
-            <span className="user-name">👤 {user.name}</span>
-            <button className="logout-button" onClick={handleLogout}>
-              Logout
-            </button>
-          </div>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
         ) : (
           <Link to="/login">
             <button className="login-button">Login</button>

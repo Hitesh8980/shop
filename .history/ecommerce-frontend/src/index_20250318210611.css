@@ -7,13 +7,14 @@ body {
 }
 
 /* Navbar Styles */
+/* Navbar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #6198ff;
-  color: rgb(117, 88, 88);
+  background: #ff6f61;
+  color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,7 +64,7 @@ body {
 /* Cart Badge */
 .cart-badge {
   background: #ffffff;
-  color: #c0807a;
+  color: #ff6f61;
   font-size: 12px;
   font-weight: bold;
   padding: 4px 8px;
@@ -89,7 +90,7 @@ body {
 .login-button,
 .logout-button {
   background: white;
-  color: #804742;
+  color: #ff6f61;
   font-size: 16px;
   font-weight: bold;
   padding: 10px 15px;
